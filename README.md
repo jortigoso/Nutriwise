@@ -6,7 +6,7 @@ Nutriwise is a fact-checking system that verifies dietary and nutritional claims
 
 - **Lidia Jiménez Algarra**  
 - **Irene Mancebo Laguna**  
-- **Jorge Otigoso Narro**  
+- **Jorge Ortigoso Narro**  
 - **Guillermo Rey Paniagua**  
 Master’s in Machine Learning for Health  Universidad Carlos III de Madrid, 2025
 
