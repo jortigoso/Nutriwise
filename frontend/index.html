@@ -1,0 +1,34 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8" />
+  <title> Nutriwise – Health Fact Checker</title>
+  <link rel="stylesheet" href="/frontend/styles.css">
+  <link rel="icon" type="image/svg+xml" href="/frontend/assets/images/favicon.svg">
+</head>
+<body>
+  <header class="header">
+    <h1>🌿 Nutriwise</h1>
+    <button id="theme-toggle" class="theme-toggle">🌙</button>
+  </header>
+
+  <div class="chat-container">
+    <div class="chatbox" id="chatbox">
+      <div class="message bot">
+        <img class="avatar" src="/frontend/assets/images/chatbot.jpg" alt="Chatbot"/>
+        <div class="bubble">
+          👋 Hello! Ask me anything about health and nutrition and I will fact-check it!
+          <span class="timestamp" id="welcome-time"></span>
+        </div>
+      </div>
+    </div>
+
+    <div class="input-area">
+      <input type="text" id="question" placeholder="Ask something..." autofocus/>
+      <button onclick="ask()">Send</button>
+    </div>
+  </div>
+
+  <script src="/frontend/script.js"></script>
+</body>
+</html>
