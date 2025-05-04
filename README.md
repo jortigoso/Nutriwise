@@ -9,7 +9,6 @@ Nutriwise is a fact-checking system that verifies dietary and nutritional claims
 - **Jorge Otigoso Narro**  
 - **Guillermo Rey Paniagua**  
 Master’s in Machine Learning for Health  Universidad Carlos III de Madrid, 2025
----
 
 ## 1. Features
 
@@ -23,8 +22,6 @@ This application implements a **Retrieval-Augmented Generation (RAG) fact-checki
   **“I'm sorry, I do not have enough information in the corpus to verify this claim.”**
 - **Supports multilingual interaction**: responses are generated in the same language as the user’s question (supports English, Spanish, French, German, Italian).
 
----
-
 ## ✨ Additional Features
 
 To enhance usability, performance, and transparency, the system also includes:
@@ -37,10 +34,6 @@ To enhance usability, performance, and transparency, the system also includes:
 - **Evaluation module**: includes benchmarking tools to compare models and settings using metrics like ROUGE-L, Recall@k, BERT F1, and latency.
 - **Bias reduction heuristics** in translation, e.g., neutralizing gendered phrasing when translating back from non-English queries.
 - **Includes a web-based user interface** that allows users to input questions and receive real-time answers with sources and confidence metrics.
-
----
-
----
 
 ## 2. Implementation
 
@@ -70,8 +63,7 @@ Nutriwise integrates several models:
 - `fastText lid.176.bin` (Facebook) for language detection.
 - `BERTScore` for evaluating answer quality.
 
----
----
+
 ## 3. File Overview
 | File/Folder            | Description                                                                 |
 |------------------------|-----------------------------------------------------------------------------|
@@ -83,13 +75,27 @@ Nutriwise integrates several models:
 | `frontend/`            | Contains static HTML files for the web-based user interface.                |
 
 
-
 ## 4. Setup Guide ⚙️
 
 To install and run Nutriwise locally, follow these steps:
 
-```bash
-git clone https://github.com/uc3m-nlp/nutriwise.git
-cd nutriwise
+1. Clone the repostory
+```
+git clone https://github.com/jortigoso/Nutriwise.git
+```
+2. Move to the project directory
+```
+cd Nutriwise
+```
+3. Add execution permissions
+```
 chmod +x setup.sh
-./setup.sh
+```
+4. Run the setup script, which will download the requierements and run the application, accessed by the *app.py* file.
+```
+./setup.sh 
+```
+5. The graphical interface can be accessed in a web-browse. By default the application is hosted at
+```
+127.0.0.1:5000
+```
