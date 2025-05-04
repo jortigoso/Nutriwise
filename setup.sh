@@ -94,23 +94,23 @@ fi
 
 # ───── Verify Corpus ─────
 if [ ! -f "$CORPUS_PATH" ]; then
-    echo "⚠️  Corpus file missing: $CORPUS_PATH. Please check config.py or add the file."
+    echo "Corpus file missing: $CORPUS_PATH. Please check config.py or add the file."
 else
-    echo "✅ Corpus file found."
+    echo "Corpus file found."
 fi
 
 # ───── Start API ─────
-echo "🚀 Launching FastAPI application..."
+echo "Launching FastAPI application..."
 python app.py &
 
 sleep 5  # wait for app to start
 
 # ───── Complete ─────
 echo ""
-echo "🎉 Setup completed successfully!"
+echo "Setup completed successfully!"
 echo "Nutriwise is running at http://127.0.0.1:5000"
 echo ""
-echo "💡 Features:"
+echo "Features:"
 echo "- Factual verification via RAG over nutrition corpus (PubMed, books)"
 echo "- Cited sources & multilingual answers (EN, ES, FR, DE, IT)"
 echo "- Local LLM (qwen2:0.5b), FAISS + BM25 hybrid retrieval"
@@ -118,5 +118,5 @@ echo "- Translation via Helsinki-NLP, FastText language detection"
 echo "- Confidence scoring, bias mitigation, summarization"
 echo "- Web interface with real-time Q&A + source display"
 echo ""
-echo "🧠 To activate the virtual environment later:"
+echo "To activate the virtual environment later:"
 echo "source $VENV_DIR/bin/activate"
