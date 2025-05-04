@@ -20,26 +20,26 @@ BM25_INDEX_PATH="data/indices/bm25"
 
 # ───── Check Python ─────
 if ! command -v $PYTHON_VERSION &> /dev/null; then
-    echo "❌ Python 3.8+ is required. Please install it."
+    echo "Python 3.8+ is required. Please install it."
     exit 1
 fi
 
 # ───── Virtual Environment ─────
 if [ ! -d "$VENV_DIR" ]; then
-    echo "✅ Creating virtual environment in $VENV_DIR..."
+    echo "Creating virtual environment in $VENV_DIR..."
     $PYTHON_VERSION -m venv $VENV_DIR
 else
-    echo "ℹ️ Virtual environment already exists."
+    echo " Virtual environment already exists."
 fi
 
 source $VENV_DIR/bin/activate
 
 # ───── Upgrade Pip ─────
-echo "📦 Upgrading pip..."
+echo " Upgrading pip..."
 pip install --upgrade pip
 
 # ───── Install Dependencies ─────
-echo "📥 Installing Python dependencies..."
+echo "Installing Python dependencies..."
 cat > requirements.txt << EOL
 numpy==1.26.4
 fasttext-wheel==0.9.2
@@ -64,32 +64,32 @@ pip install -r requirements.txt
 
 # ───── Install Ollama ─────
 if ! command -v ollama &> /dev/null; then
-    echo "🔧 Installing Ollama..."
+    echo "Installing Ollama..."
     curl -fsSL https://ollama.com/install.sh | sh
 else
-    echo "✅ Ollama is already installed."
+    echo "Ollama is already installed."
 fi
 
 # ───── Start Ollama ─────
-echo "🚀 Starting Ollama server..."
+echo "Starting Ollama server..."
 ollama serve &
 
 sleep 5  # allow server to initialize
 
 # ───── Pull Ollama Model ─────
-echo "📦 Pulling LLM model qwen2:0.5b..."
+echo "Pulling LLM model qwen2:0.5b..."
 ollama pull qwen2:0.5b
 
 # ───── Prepare Directories ─────
-echo "📁 Creating required directories..."
+echo " Creating required directories..."
 mkdir -p data/models data/indices/faiss data/indices/bm25 data/sources
 
 # ───── Download Language Detection Model ─────
 if [ ! -f "$FASTTEXT_MODEL_PATH" ]; then
-    echo "📥 Downloading FastText language ID model..."
+    echo " Downloading FastText language ID model..."
     curl -o "$FASTTEXT_MODEL_PATH" "$FASTTEXT_MODEL_URL"
 else
-    echo "✅ FastText model already exists."
+    echo " FastText model already exists."
 fi
 
 # ───── Verify Corpus ─────
